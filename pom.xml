@@ -16,7 +16,7 @@
     <repository>
       <id>internal.repo</id>
       <name>Stein Rocky</name>
-      <url>https://experience.jupitercloud.de/nexus/content/repositories/Snapshots</url>
+      <url>https://experience.jupitercloud.de/nexus/content/repositories/snapshots</url>
     </repository>
   </distributionManagement>
   <build>
