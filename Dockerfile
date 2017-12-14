@@ -1,7 +1,7 @@
 FROM steinrock/websphere-liberty_arm_bf:latest
 
 VOLUME ["/opt/ibm/wlp/usr/servers/defaultServer/dropins"]
-VOLUME ["/opt/tomcat/webapps"]
+VOLUME ["/var/lib/tomcat7/webapps"]
 
 RUN apt-get update && apt-get install -y nano && apt-get install -y tomcat7
 
