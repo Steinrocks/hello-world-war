@@ -1,4 +1,4 @@
-FROM tomcat
+FROM tomcat:latest
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
@@ -16,7 +16,7 @@ VOLUME ["/usr/local/tomcat/webapps"]
 
 EXPOSE 8080
 
-FROM steinrock/websphere-liberty_arm_bf
+FROM steinrock/websphere-liberty_arm_bf:latest
 
 RUN apt-get update && apt-get install -y nano
 
