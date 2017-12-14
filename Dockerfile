@@ -1,7 +1,7 @@
 FROM steinrock/websphere-liberty_arm_bf:latest
 
 VOLUME ["/opt/ibm/wlp/usr/servers/defaultServer/dropins"]
-VOLUME ["/usr/local/tomcat/webapps"]
+VOLUME ["/opt/tomcat/webapps"]
 
 RUN apt-get update && apt-get install -y nano && apt-get install -y tomcat7
 
@@ -12,8 +12,8 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 WORKDIR $CATALINA_HOME
 
-RUN /usr/local/tomcat/bin/shutdown.sh
-RUN /usr/local/tomcat/bin/startup.sh    
+RUN /opt/tomcat/bin/shutdown.sh
+RUN /opt/tomcat/bin/startup.sh    
 RUN /opt/ibm/wlp/bin/server start
 
 EXPOSE 8080
