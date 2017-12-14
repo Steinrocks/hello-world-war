@@ -20,7 +20,7 @@ FROM steinrock/websphere-liberty_arm_bf
 
 RUN apt-get update && apt-get install -y nano
 
-RUN wget -O /opt/ibm/wlp/usr/servers/defaultServer/dropins \
+RUN wget -O /opt/ibm/wlp/usr/servers/defaultServer/dropins/WorldWar.war \
     "https://experience.jupitercloud.de/nexus/service/local/artifact/maven/redirect?r=snapshots&g=berry_hello_ww1&a=hello-world-war&e=war&v=LATEST"
  
 RUN /opt/ibm/wlp/bin/server stop
