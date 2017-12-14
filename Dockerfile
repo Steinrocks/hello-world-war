@@ -20,12 +20,12 @@ FROM steinrock/websphere-liberty_arm_bf
 
 RUN apt-get update && apt-get install -y nano
 
-RUN wget -O /usr/servers/defaultServer/dropins \
+RUN wget -O /opt/ibm/wlp/usr/servers/defaultServer/dropins \
     "https://experience.jupitercloud.de/nexus/service/local/artifact/maven/redirect?r=snapshots&g=berry_hello_ww1&a=hello-world-war&e=war&v=LATEST"
  
-RUN /bin/server stop
-RUN /bin/server start
+RUN /opt/ibm/wlp/bin/server stop
+RUN /opt/ibm/wlp/bin/server start
 
-VOLUME ["/usr/servers/defaultServer/dropins"]
+VOLUME ["/opt/ibm/wlp/usr/servers/defaultServer/dropins"]
 
 EXPOSE 9080
